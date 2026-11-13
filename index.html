@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ShopNest — a modern demo storefront." />
+  <title>ShopNest — Everyday Finds, Elevated</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">✨ Welcome to ShopNest — thoughtful finds for everyday life <span>Free shipping on orders over ₹1,499</span></div>
+  <header class="site-header">
+    <a class="logo" href="#" aria-label="ShopNest home"><span class="logo-mark">s</span> shopnest<span class="dot">.</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#shop">Shop</a><a href="#collections">Collections</a><a href="#about">Our story</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-toggle" aria-label="Focus search" title="Search">⌕</button>
+      <button class="icon-btn cart-open" aria-label="Open shopping bag" title="Shopping bag">♧ <span class="cart-count">0</span></button>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> THE NEW EVERYDAY EDIT</p>
+        <h1>Little things.<br><em>Lovely living.</em></h1>
+        <p class="hero-text">Discover feel-good essentials, thoughtful accessories and everyday favourites — all in one happy place.</p>
+        <a class="btn btn-dark" href="#shop">Explore the collection <span>↗</span></a>
+        <div class="hero-note"><span class="avatars">● ● ●</span> <span>Loved by 2,000+ happy shoppers</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image image-one"></div>
+        <div class="hero-image image-two"></div>
+        <div class="floating-card"><span>✳</span><div><b>Made for you</b><small>Curated with care</small></div></div>
+        <div class="hero-sticker">GOOD<br>THINGS<br>INSIDE <span>↘</span></div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><span>✦</span> Carefully curated</div><div><span>♡</span> Easy returns</div><div><span>⌁</span> Secure checkout demo</div><div><span>✧</span> Made for everyday</div>
+    </section>
+
+    <section class="categories section-wrap" id="collections">
+      <div class="section-heading"><div><p class="eyebrow">FIND YOUR FAVOURITE</p><h2>Shop by mood</h2></div><p>Good design, useful details<br>and a little bit of joy.</p></div>
+      <div class="category-grid">
+        <a class="category-card cat-home" href="#shop" data-category="Home"><span>01 / HOME</span><b>Make space<br>for calm.</b><i>Explore ↗</i></a>
+        <a class="category-card cat-style" href="#shop" data-category="Style"><span>02 / STYLE</span><b>Your everyday,<br>your way.</b><i>Explore ↗</i></a>
+        <a class="category-card cat-tech" href="#shop" data-category="Tech"><span>03 / TECH</span><b>Smart little<br>upgrades.</b><i>Explore ↗</i></a>
+      </div>
+    </section>
+
+    <section class="products-section section-wrap" id="shop">
+      <div class="section-heading products-heading"><div><p class="eyebrow">THE GOOD STUFF</p><h2>Popular right now<span class="dot">.</span></h2></div><div class="shop-controls"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Find something lovely..." aria-label="Search products"></label><select id="sortSelect" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div></div>
+      <div class="filter-row"><button class="filter active" data-filter="All">All finds</button><button class="filter" data-filter="Home">Home</button><button class="filter" data-filter="Style">Style</button><button class="filter" data-filter="Tech">Tech</button></div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No finds match that search. Try another word.</p>
+    </section>
+
+    <section class="quote-banner" id="about">
+      <div class="quote-symbol">“</div><p>We believe the everyday deserves<br><em>a little extra lovely.</em></p><span>THE SHOPNEST WAY</span>
+    </section>
+
+    <section class="newsletter section-wrap">
+      <div><p class="eyebrow">A LITTLE NOTE FROM US</p><h2>Good things, in your inbox.</h2><p>Get first looks, fresh finds and occasional treats.</p></div>
+      <form id="newsletterForm"><input type="email" placeholder="Your email address" aria-label="Email address" required><button class="btn btn-dark" type="submit">Count me in ↗</button></form>
+      <small id="newsletterMessage" aria-live="polite"></small>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="logo" href="#"><span class="logo-mark">s</span> shopnest<span class="dot">.</span></a><p>Thoughtful finds for everyday life.</p><div><a href="#shop">Shop</a><a href="#collections">Collections</a><a href="#about">Our story</a></div><small>© 2026 ShopNest. Demo storefront for learning purposes.</small></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">YOUR PICKS</p><h2>Your bag <span id="drawerCount">(0)</span></h2></div><button class="close-cart" aria-label="Close shopping bag">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>♡</span><h3>Your bag is taking a nap.</h3><p>Add something lovely to wake it up.</p><button class="btn btn-dark continue-shopping">Continue shopping</button></div>
+    <div class="cart-bottom" id="cartBottom"><div class="subtotal"><span>Subtotal</span><b id="subtotal">₹0</b></div><p>Shipping and taxes calculated at checkout.</p><button class="btn btn-dark checkout-btn">Continue to checkout <span>↗</span></button><small>Demo only — no payment will be collected.</small></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
